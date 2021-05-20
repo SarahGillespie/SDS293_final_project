@@ -2,11 +2,15 @@
 title: "final_project"
 author: "Sarah Gillespie"
 date: "5/19/2021"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
 ---
-
+# Part 1:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(DT)
 library(tidyverse)
+library(prettydoc)
 ```
