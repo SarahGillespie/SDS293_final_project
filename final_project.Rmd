@@ -7,10 +7,31 @@ output:
     theme: cayman
     highlight: github
 ---
-# Part 1:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(DT)
 library(tidyverse)
 library(prettydoc)
 ```
+
+# Why are we even researching language models?
+
+
+
+
+# Title of the paper
+link to the paper
+each of the authors, link to their bio page and maybe their professional twitter
+
+
+> quote the abstract and then
+
+
+summarize the abstract
+
+# What exactly does it mean for language to be toxic?
+That is a very context- and culture-specific to determine whther language is toxic.
+
+(maybe go into that? like how many message boards with reclaimed slurs are getting shut down.
+
+# Graphs b/c graphs are great
