@@ -13,7 +13,7 @@
 <meta name="author" content="Sarah Gillespie" />
 
 
-<title>final_project</title>
+<title>Chat about RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models</title>
 
 <script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
@@ -35,28 +35,46 @@
 
 
 <section class="page-header">
-<h1 class="title toc-ignore project-name">final_project</h1>
+<h1 class="title toc-ignore project-name">Chat about RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models</h1>
 <h4 class="author project-author">Sarah Gillespie</h4>
-<h4 class="date project-date">5/19/2021</h4>
+<h4 class="date project-date">5/20/2021</h4>
 </section>
 
 
 
 <section class="main-content">
-<div id="why-are-we-even-researching-language-models" class="section level1">
-<h1>Why are we even researching language models?</h1>
+<div id="a-casual-conversation-about-a-machine-learning-paper.-grab-your-coffee-and-maybe-a-cat-and-get-ready-to-think-about-natural-language-processing.-see-the-end-of-the-blog-post-for-my-coffee-and-cat." class="section level4">
+<h4>A casual conversation about a machine learning paper. Grab your coffee and maybe a cat and get ready to think about natural language processing. See the end of the blog post for my coffee and cat.</h4>
 </div>
-<div id="title-of-the-paper" class="section level1">
-<h1>Title of the paper</h1>
-<p>link to the paper each of the authors, link to their bio page and maybe their professional twitter</p>
+<div id="why-is-natural-language-processing-useful" class="section level3">
+<h3>Why is natural language processing useful?</h3>
+</div>
+<div id="realtoxicityprompts-evaluating-neural-toxic-degeneration-in-language-models" class="section level3">
+<h3>RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models</h3>
+<p><a href="https://www.aclweb.org/anthology/2020.findings-emnlp.301/">The paper</a> was published in September 2020 with its <a href="https://github.com/allenai/real-toxicity-prompts">code located on Github</a>. This paper was written by Samuel Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi, and Noah A. Smith, all at the University of Washington.</p>
+<p>Samuel Gehman: <a href="https://github.com/thesamuel">Github</a></p>
+<p>Suchin Gururangan: <a href="https://suchin.io/">Personal website</a> <a href="https://twitter.com/ssgrn">Professional Twitter</a></p>
+<p>Maarten Sap: <a href="https://homes.cs.washington.edu/~msap/">Personal website</a> <a href="https://twitter.com/MaartenSap">Professional Twitter</a></p>
+<p>Yejin Choi: <a href="https://homes.cs.washington.edu/~yejin/">Personal website</a> <a href="https://twitter.com/yejinchoinka">Professional Twitter</a></p>
+<p>Noah A. Smith: <a href="https://homes.cs.washington.edu/~nasmith/">Personal website</a></p>
+</div>
+<div id="the-papers-abstract" class="section level3">
+<h3>The paper’s abstract:</h3>
 <blockquote>
-<p>quote the abstract and then</p>
+<p>Pretrained neural language models (LMs) are prone to generating racist, sexist, or otherwise toxic language which hinders their safe deployment. We investigate the extent to which pretrained LMs can be prompted to generate toxic language, and the effectiveness of controllable text generation algorithms at preventing such toxic degeneration. We create and release REALTOXICITYPROMPTS, a dataset of 100K naturally occurring, sentence-level prompts derived from a large corpus of English web text, paired with toxicity scores from a widelyused toxicity classifier. Using REALTOXICITYPROMPTS, we find that pretrained LMs can degenerate into toxic text even from seemingly innocuous prompts. We empirically assess several controllable generation methods, and find that while data- or compute-intensive methods (e.g., adaptive pretraining on non-toxic data) are more effective at steering away from toxicity than simpler solutions (e.g., banning “bad” words), no current method is failsafe against neural toxic degeneration. To pinpoint the potential cause of such persistent toxic degeneration, we analyze two web text corpora used to pretrain several LMs (including GPT-2; Radford et al., 2019), and find a significant amount of offensive, factually unreliable, and otherwise toxic content. Our work provides a test bed for evaluating toxic generations by LMs and stresses the need for better data selection processes for pretraining.</p>
 </blockquote>
-<p>summarize the abstract</p>
+<p>In short, the paper has a goal to measure how much natural language models create “toxic” language and look at possible solutions. The authors’ boundry of what is considered toxic language is racist and sexist phrases that would be inappropriate to say in an office job in the United States. The paper outlines a definition for what is considered toxic language and <a href="https://allenai.org/data/real-toxicity-prompts">releases the data set of prompts</a> used to test if and how much an algorithm produced toxic language. Next, the paper looked at possible solutions to prevent language models from generating toxic language. The two possible solution categories are</p>
+<ol style="list-style-type: decimal">
+<li><p>using less toxic data and/or</p></li>
+<li><p>decoding-based detoxification (having a banned words list, have the model put more value on non-toxic words when generating language, or a slow/computationally intensive strategy called PPLM).</p></li>
+</ol>
 </div>
-<div id="what-exactly-does-it-mean-for-language-to-be-toxic" class="section level1">
-<h1>What exactly does it mean for language to be toxic?</h1>
-<p>That is a very context- and culture-specific to determine whther language is toxic.</p>
+<div id="what-does-it-mean-for-language-to-be-toxic" class="section level3">
+<h3>What does it mean for language to be toxic?</h3>
+<p>To see examples of the language used in this paper, the authors provide an interactive website to pick a language generation model, prompt, and selection for if you want examples of generated language that is “work safe,” “toxic,” or “very toxic.” Rather than killing the vibe of this coffee chat with uncomfortable and potentially triggering phrases, I recommend going to <a href="https://toxicdegeneration.allenai.org/">the website</a> if you are curious to explore examples.</p>
+<p>The authors used Perspective API, a widely used and commercially deployed toxicity detection tool. The authors then checked the Perspective API’s categorization of toxic language against a manual check performed by Gehman, Gururangan, and Sap. The API and the authors conclusions about what counts as toxic language were roughly the same on a sample of 100 documents. The authors then used Perspective API to check the toxicity of models’ generated language throughout the paper.</p>
+<p>But in an even more general sense, what counts as toxic language is a very context- and culture-specific and fluid over time. This could be its whole own chapter.</p>
+<p>[LINK AND QUOTE THE DATA FEMINISM BOOK???]</p>
 <p>(maybe go into that? like how many message boards with reclaimed slurs are getting shut down.</p>
 </div>
 <div id="graphs-bc-graphs-are-great" class="section level1">
