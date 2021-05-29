@@ -48,7 +48,7 @@ toxic language which hinders their safe deployment. We investigate the extent to
 language, and the effectiveness of controllable
 text generation algorithms at preventing such
 toxic degeneration. We create and release REALTOXICITYPROMPTS, a dataset of 100K naturally occurring, sentence-level prompts derived from a large corpus of English web
-text, paired with toxicity scores from a widelyused toxicity classifier. Using REALTOXICITYPROMPTS, we find that pretrained LMs can
+text, paired with toxicity scores from a widely used toxicity classifier. Using REALTOXICITYPROMPTS, we find that pretrained LMs can
 degenerate into toxic text even from seemingly
 innocuous prompts. We empirically assess several controllable generation methods, and find
 that while data- or compute-intensive methods
@@ -63,7 +63,7 @@ and stresses the need for better data selection
 processes for pretraining.
 
 
-The paper has a goal to measure how much natural language models create "toxic" language and look at possible solutions. To see the how much toxic content common natural language processing models create when unsupervised, the authors gave five models many prompts and looked at a model's most toxic output and how common a model produced any toxic output whatsoever. The authors' line in the sand about what is considered toxic content seems to be racist and sexist language that would be inappropriate to say in an office job in the United States. The authors also [released the data set of prompts](https://allenai.org/data/real-toxicity-prompts) used to test if and how much an algorithm produced toxic language and highlighted the ones that were most likely to make a model produce toxic language. Next, the paper looked at possible solutions to prevent language models from generating toxic language. The two possible solution categories are
+The paper has a goal to measure how much natural language models create "toxic" language and look at possible solutions. To see the how much toxic content common natural language processing models create when unsupervised, the authors gave five models many prompts and looked at a model's most toxic output and how common a model produced any toxic output whatsoever. The authors' line about what is considered toxic content seems to be language that would be inappropriate to say in an office job in the United States. The authors also [released the data set of prompts](https://allenai.org/data/real-toxicity-prompts) used to test if and how much an algorithm produced toxic language and highlighted the ones that were most likely to make a model produce toxic language. Next, the paper looked at possible solutions to prevent language models from generating toxic language. The two possible solution categories are
 
 (1) using less toxic data
 
@@ -75,16 +75,13 @@ At this current moment in natural language processing ability, these solutions a
 ### What does it mean for language to be toxic?
 
 
-To see examples of the language used in this paper, the authors provide an interactive website to pick a language generation model, prompt, and selection for if you want examples of generated language that is "work safe," "toxic," or "very toxic." Rather than killing the vibe of this coffee chat by listing some of the uncomfortable and offensive outputs, I recommend going to [the website](https://toxicdegeneration.allenai.org/) if you are curious to explore examples.
+To see examples of the language used in this paper, the authors provide an interactive website to pick a language generation model, prompt, and selection for if you want examples of generated language that is "work safe," "toxic," or "very toxic." I recommend going to [the website](https://toxicdegeneration.allenai.org/) if you are curious to explore examples.
 
 
 The authors used Perspective API, a widely used and commercially deployed toxicity detection tool, to rate the toxicity of language model's outputs.  The authors then checked Perspective API's categorization of toxic language against a manually done toxicity rating performed by Gehman, Gururangan, and Sap. The API and the authors conclusions about what counts as toxic language were roughly the same on a sample of 100 documents. The authors used Perspective API to check the toxicity of models' generated language throughout the paper.
 
 
-Please note that what is considered toxic language can actually be context-specific, culture-specific, and fluid over time. For example, reclaimed slurs may be used by marginalized groups.
-
-
-The paper that caused much [controversy](https://www.fastcompany.com/90636950/googles-turning-point) at Google with corporate pushback and its authors' firings addressed this. [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922) by [Timnit Gebru](https://twitter.com/timnitGebru), [Emily M. Bender](https://twitter.com/emilymbender), [Angelina McMillan-Major](https://twitter.com/mcmillan_majora), and [Scmargaret Scmitchell](https://twitter.com/mmitchell_ai) says:
+Note that what is considered toxic language can actually be context-specific, culture-specific, and fluid over time. For example, reclaimed slurs may be used by marginalized groups. The paper that caused much [controversy](https://www.fastcompany.com/90636950/googles-turning-point) at Google with corporate pushback and its authors' firings addressed this. [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922) by [Timnit Gebru](https://twitter.com/timnitGebru), [Emily M. Bender](https://twitter.com/emilymbender), [Angelina McMillan-Major](https://twitter.com/mcmillan_majora), and [Scmargaret Scmitchell](https://twitter.com/mmitchell_ai) says:
 
 
 > The Colossal Clean Crawled Corpus [107], used to train a trillion
@@ -102,7 +99,7 @@ provide training data that reclaims slurs and otherwise describes
 marginalized identities in a positive light.
 
 
-A toxicity detection tool may not pick up the semantic shift of a slur it finds in a paragraph being used as reclaimed or just a slur. *RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models* did not need to contend with a challenge created by a slur's context since the language generator was responding to only a half-sentence size prompt. However, the importance of context is relevant when deploying natural language processing tools on a large scale for internet moderation. Censoring and removing language that contains reclaimed slur words would create a negative externality through disbanding online communities where marginalized groups use reclaimed slurs and support each other.
+A toxicity detection tool that bans any page that contains a banned word, such as [the list of 400 words used by the paper](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words), may not pick up the semantic shift of a reclaimed slur found in a paragraph compared to the word being used just as a slur. *RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models* did not need to contend with a challenge created by a slur's context since the language generator was responding to only a half-sentence size prompt. However, the importance of context is relevant when deploying natural language processing tools on a large scale for internet moderation. Censoring and removing language that contains reclaimed slur words would create a negative externality through disbanding online communities where marginalized groups use reclaimed slurs and support each other.
 
 ### Which model is the best and which model is the worst?
 
@@ -122,14 +119,14 @@ knitr::include_graphics("figure_2_from_RealToxicityPrompts.png")
 This figure was not intuitive to me at first glance. The x-axis shows the "Number of Generations" on a log scale. The y-axis labeled "Expected Maximum Toxicity," with a scale of 0 to 1 as rated by Perspective API, the widely used and commercially deployed toxicity detection tool, is found by having the model generate a responses for the number of generations listed on the x-axis, rating how toxic each of the responses are, then using the most toxic prompt's score as the value for the "Expected Maximum Toxicity" value on the y-axis. So, looking at what the authors highlighted, the language model titled GPT-2 will probably respond with something that is ranked at a 0.65 toxicity level if you have GPT-2 respond to 100 prompts. The yellow model, GPT-1, is likely to have said something with a toxicity rating of 0.95 if you have it respond to about 1000 prompts. Each of the five models have different training data, so the conclusion from this graph is that a model's training data matters.
 
 
-The highlighted area around each line in the graph is informed by the authors' bootstrap estimates. [Bootstrap estimates](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) are one of my favorite statistical concepts: I thought it was an early April Fools Day joke for a solid 20 minutes of my Multiple Regression class until I tried it with a friend using little scraps of paper and then R. Bootstrapping is a test and resampling method that uses random sampling with replacement from an existing sample. It is used when the sample population is very small and relies on the concept that an inference about a population can the modeled by pulling sub-samples from a total sample repeatedly. In this paper, the population is the amount of times that a model produced toxic language out of all the content that a model generated, but bootstrapping could be used with a more traditional population, like the amount of [cats with extra toes](https://en.wikipedia.org/wiki/Polydactyl_cat) out of all the cats in the world.
+The highlighted area around each line in the graph is informed by the authors' bootstrap estimates. [Bootstrap estimates](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) are one of my favorite statistical concepts: I thought it was an early April Fools Day joke for a solid 20 minutes of my Multiple Regression class until I tried it with a friend using little scraps of paper and then R. Bootstrapping is a test and resampling method that uses random sampling with replacement from an existing sample. It is used when the sample population is very small and relies on the concept that an inference about a population can be modeled by pulling sub-samples from a total sample repeatedly. In this paper, the population is the amount of times that a model produced toxic language out of all the content that a model generated, but bootstrapping could be used with a more traditional population, like the amount of [cats with extra toes](https://en.wikipedia.org/wiki/Polydactyl_cat) out of all the cats in the world.
 
 Next, the paper's table 2 details how each model performed over 25 generations with consideration to the models' expected maximum toxicity and the likelihood of generating any toxic text in those 25 generations. 
 ```{r table2_from_RealToxicityPrompts, fig.cap="Image Description: A screenshot of the paper's Table 2, located on page 3359", echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("table2_from_RealToxicityPrompts.png")
 ```
 
-The takeaway from Table 2 is that it is possible for non-toxic prompts to lead to toxic responses in all five models. On the right, the model generated an instance of toxic language in 44% to 60% of the 25 generations. Providing each model a toxic prompt led to toxic language in between 82% to 90% of 25 generations. The left compares how toxic the generated toxic language was on a scale of 0 to 1, brown down by prompt category. CTRL Wiki appears to produce the least toxic language and produces it fewer times compared to the other models.
+The takeaway from Table 2 is that it is possible for non-toxic prompts to lead to toxic responses in all five models. On the right, the model generated an instance of toxic language in 44% to 60% of the 25 generations. Providing each model a toxic prompt led to toxic language in between 82% to 90% of 25 generations. The left compares how toxic the generated toxic language was on a scale of 0 to 1, broken down by prompt category. CTRL Wiki appears to produce the least toxic language and produces it fewer times compared to the other models.
 
 
 ### Could you tell me more about where these models come from?
@@ -167,6 +164,6 @@ I am concerned by the corporate pushback at Google when their ethics team brough
 
 ### My coffee and cat
 
-```{r Quinn_and_coffee, fig.cap="Image Description: My white and gray Ragdoll kitty sprawls on a desk next to a black Toasted Coconut Cream cold brew coffee from Shelburne Falls Coffee Roasters. The background is out of focus and has visible office clutter, including yellow pencils, a blue Olivetti Underwood Lettera 32 typewriter, my roommate's purple painting, and a printer.", echo=FALSE, out.width="100%", fig.align='center'}
+```{r Quinn_and_coffee, fig.cap="Image Description: My white and gray Ragdoll kitty sprawls on a desk next to a black Toasted Coconut Cream cold brew coffee from Shelburne Falls Coffee Roasters. The background is out of focus and has visible office clutter, including yellow pencils, a teal Olivetti Underwood Lettera 32 typewriter, a purple painting, and a printer.", echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("Quinn_and_coffee.jpg")
 ```
